@@ -1,0 +1,157 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111827;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+h1 {
+    color: #FADBD8;
+    margin: 0 0 8px;
+}
+
+body>p {
+    color: #94a3b8;
+    margin: 0 0 30px;
+}
+
+/* ---------- GALERÍA ---------- */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Base de las tarjetas 2D */
+.tarjeta {
+    background: #1C2833;
+    border-radius: 12px;
+    padding: 20px;
+    border-top: 5px solid #8B0000;
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ---------- IMÁGENES DE LOS PERSONAJES ---------- */
+.tarjeta img,
+.cara img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    /* recorta la foto sin deformarla */
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.tarjeta h2 {
+    margin: 0 0 8px;
+    color: #FADBD8;
+}
+
+.tarjeta p {
+    margin: 0 0 15px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.efecto {
+    display: inline-block;
+    background: #8B0000;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* TRANSFORMACIÓN 1: agranda */
+.escala:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* TRANSFORMACIÓN 2: gira y sube desde la esquina */
+.rota {
+    transform-origin: bottom left;
+}
+
+.rota:hover {
+    transform: translateY(-10px) rotate(-3deg);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* TRANSFORMACIÓN 3: inclina */
+.inclina:hover {
+    transform: skew(-8deg, -3deg);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* TRANSFORMACIÓN 4: flip 3D con foto */
+.escena-flip {
+    perspective: 900px;
+}
+
+.flip {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    /* alto para que quepa la foto */
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+.escena-flip:hover .flip {
+    transform: rotateY(180deg);
+}
+
+.cara {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.frente {
+    background: #1C2833;
+    border-top: 5px solid #8B0000;
+}
+
+.reverso {
+    background: #8B0000;
+    transform: rotateY(180deg);
+}
+
+.cara h2 {
+    margin: 0 0 8px;
+    color: #FADBD8;
+}
+
+.cara p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.tarjeta img {
+    transition: transform 0.4s ease;
+}
+
+.tarjeta:hover img {
+    transform: scale(1.08);
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 2</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Catálogo de villanos</h1>
+    <p>Pasa el cursor por cada tarjeta: cada una usa una transformación distinta.</p>
+
+    <section class="galeria">
+
+        <!-- Tarjeta 1: scale -->
+        <article class="tarjeta escala">
+            <img src="imagen/IT.jpg" alt="Pennywise">
+            <h2>Pennywise</h2>
+            <p>El payaso de It</p>
+            <span class="efecto">scale()</span>
+        </article>
+
+        <!-- Tarjeta 2: rotate + translate -->
+        <article class="tarjeta rota">
+            <img src="imagen/ANABELLE.jpg" alt="Annabelle">
+            <h2>Annabelle</h2>
+            <p>La muñeca poseída</p>
+            <span class="efecto">rotate() + translate()</span>
+        </article>
+
+        <!-- Tarjeta 3: skew -->
+        <article class="tarjeta inclina">
+            <img src="imagen/LAMONJA.jpg" alt="La Monja">
+            <h2>La Monja</h2>
+            <p>Valak, el demonio del convento</p>
+            <span class="efecto">skew()</span>
+        </article>
+
+        <!-- Tarjeta 4: flip 3D -->
+        <article class="escena-flip">
+            <div class="flip">
+                <div class="cara frente">
+                    <img src="imagen/CHUCKY.jpg" alt="Chucky">
+                    <h2>Chucky</h2>
+                    <p>Pasa el cursor</p>
+                </div>
+                <div class="cara reverso">
+                    <h2>El muñeco diabólico</h2>
+                    <p>rotateY(180deg) con perspective</p>
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+</body>
+</html>
